@@ -14,12 +14,22 @@ import { bufferToggle } from 'rxjs';
               <br><br>
               <input #myInput type="text">
               <button (click)="logValue(myInput.value)">log</button>
+              <h1>Two Way Binding</h1>
+              <input [(ngModel)]="inputText" type="text">
+              {{inputText}}
+              <h1>ngIf</h1>
+              <div *ngIf="Display; else elseBlock">Hello</div>
+              <ng-template #elseBlock>
+                <div>else code shown</div>
+              </ng-template>
               `,
   styles: []
 })
 export class TestComponent implements OnInit {
+  public Display = "";
   public Name = "sushant";
   public Space = "";
+  public inputText = "";
   constructor() { }
 
   public titleStyles = {
