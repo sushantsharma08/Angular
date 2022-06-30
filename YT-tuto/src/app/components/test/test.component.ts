@@ -30,7 +30,9 @@ import { bufferToggle } from 'rxjs';
                 <h4 *ngSwitchDefault="">pick again</h4>
               </div>
               <h1>*ngFor</h1>
-
+              <div *ngFor="let color of Colours; index as i">
+                <h4>{{i}} {{color}}</h4>
+              </div>
               `,
   styles: []
 })
@@ -40,6 +42,7 @@ export class TestComponent implements OnInit {
   public Space = "";
   public inputText = "";
   public color = 'red';
+  public Colours = ["red",'blue','green','yellow']
   constructor() { }
 
   public titleStyles = {
