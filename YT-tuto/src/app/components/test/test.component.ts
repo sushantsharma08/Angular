@@ -24,7 +24,7 @@ export class TestComponent implements OnInit {
   }
   onClick(){
     console.log("hello")
-     this.Space = "hello";
+     this.Space = "button working";
   }
   ngOnInit(): void {
   }
