@@ -17,11 +17,20 @@ import { bufferToggle } from 'rxjs';
               <h1>Two Way Binding</h1>
               <input [(ngModel)]="inputText" type="text">
               {{inputText}}
-              <h1>ngIf</h1>
+              <h1>*ngIf</h1>
               <div *ngIf="Display; else elseBlock">Hello</div>
               <ng-template #elseBlock>
                 <div>else code shown</div>
               </ng-template>
+              <h1>*ngSwitch</h1>
+              <div [ngSwitch]="color">
+                <h4 *ngSwitchCase="'red'">color is red</h4>
+                <h4 *ngSwitchCase="'blue'">color is blue</h4>
+                <h4 *ngSwitchCase="'green'">color is green</h4>
+                <h4 *ngSwitchDefault="">pick again</h4>
+              </div>
+              <h1>*ngFor</h1>
+
               `,
   styles: []
 })
@@ -30,6 +39,7 @@ export class TestComponent implements OnInit {
   public Name = "sushant";
   public Space = "";
   public inputText = "";
+  public color = 'red';
   constructor() { }
 
   public titleStyles = {
