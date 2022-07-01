@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { bufferToggle } from 'rxjs';
 
 @Component({
@@ -33,10 +33,13 @@ import { bufferToggle } from 'rxjs';
               <div *ngFor="let color of Colours; index as i">
                 <h4>{{i}} {{color}}</h4>
               </div>
+              <h2>Component INteraction</h2>
+              <h5>{{parentData}}</h5>
               `,
   styles: []
 })
 export class TestComponent implements OnInit {
+  @Input() public parentData: any;
   public Display = "";
   public Name = "sushant";
   public Space = "";
